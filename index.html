@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronometros</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Estilos.css">
+  <meta charset="UTF-8">
+  <title>Tres Cronómetros</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Estilos.css">
 </head>
 <body>
+
   <div class="container mt-5">
     <div class="row">
-      <div class="col">
-        <h3>Cronómetro 1</h3>
-        <p id="cronometro1">00:00</p>
-        <button onclick="controlarCronometro('cronometro1', 60)" class="btn btn-primary">Play/Pausa</button>
-        <button onclick="reiniciarCronometro('cronometro1', 60)" class="btn btn-secondary">Reiniciar</button>
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Cronómetro 1</h3>
+            <input type="number" id="inputTiempo1" class="form-control mb-2" placeholder="Ingrese tiempo en segundos">
+            <p id="cronometro1" class="h3 text-danger">00:00</p>
+            <p id="mensaje1"></p>
+            <button onclick="iniciarCronometro('cronometro1', 'mensaje1', 'inputTiempo1')" class="btn btn-primary btn-neon mr-2">Play</button>
+            <button onclick="pausarCronometro('cronometro1', 'mensaje1')" class="btn btn-danger">Pausar</button>
+            <button onclick="reiniciarCronometro('cronometro1', 'mensaje1', 'inputTiempo1')" class="btn btn-primary btn-neon">Reiniciar</button>
+          </div>
+        </div>
       </div>
-      <div class="col">
-        <h3>Cronómetro 2</h3>
-        <p id="cronometro2">00:00</p>
-        <button onclick="controlarCronometro('cronometro2', 120)" class="btn btn-primary">Play/Pausa</button>
-        <button onclick="reiniciarCronometro('cronometro2', 120)" class="btn btn-secondary">Reiniciar</button>
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Cronómetro 2</h3>
+            <input type="number" id="inputTiempo2" class="form-control mb-2" placeholder="Ingrese tiempo en segundos">
+            <p id="cronometro2" class="h3 text-danger">00:00</p>
+            <p id="mensaje2"></p>
+            <button onclick="iniciarCronometro('cronometro2', 'mensaje2', 'inputTiempo2')" class="btn btn-primary btn-neon mr-2">Play</button>
+            <button onclick="pausarCronometro('cronometro2', 'mensaje2')" class="btn btn-danger">Pausar</button>
+            <button onclick="reiniciarCronometro('cronometro2', 'mensaje2', 'inputTiempo2')" class="btn btn-primary btn-neon">Reiniciar</button>
+          </div>
+        </div>
       </div>
-      <div class="col">
-        <h3>Cronómetro 3</h3>
-        <p id="cronometro3">00:00</p>
-        <button onclick="controlarCronometro('cronometro3', 180)" class="btn btn-primary">Play/Pausa</button>
-        <button onclick="reiniciarCronometro('cronometro3', 180)" class="btn btn-secondary">Reiniciar</button>
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Cronómetro 3</h3>
+            <input type="number" id="inputTiempo3" class="form-control mb-2" placeholder="Ingrese tiempo en segundos">
+            <p id="cronometro3" class="h3 text-danger">00:00</p>
+            <p id="mensaje3"></p>
+            <button onclick="iniciarCronometro('cronometro3', 'mensaje3', 'inputTiempo3')" class="btn btn-primary btn-neon mr-2">Play</button>
+            <button onclick="pausarCronometro('cronometro3', 'mensaje3')" class="btn btn-danger">Pausar</button>
+            <button onclick="reiniciarCronometro('cronometro3', 'mensaje3', 'inputTiempo3')" class="btn btn-primary btn-neon">Reiniciar</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-    <script src="Funcionalidad.js"></script>
+
+  <script src="Funcionalidad.js"></script>
 </body>
 </html>
