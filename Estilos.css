@@ -3,3 +3,47 @@
     margin: 0%;
     padding: 0%;
 }
+
+body {
+    background-color: #f8f9fa;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .h3 {
+    font-size: 2.5rem;
+  }
+  
+  .btn-neon {
+    color: #fff;
+    background-color: #656565;
+    border-color: #000000;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  
+  .btn-neon:hover {
+    color: #ff00ff;
+    background-color: transparent;
+  }
+  
+  .btn-danger {
+    color: #fff;
+    background-color: #b141a2;
+    border-color: #b141a2;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  
+  .btn-danger:hover {
+    color: #ff0000;
+    background-color: transparent;
+  }
+  
