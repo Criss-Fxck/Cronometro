@@ -1,36 +1,63 @@
 let intervalos = {};
 
-    function iniciarCronometro(id, tiempo) {
-      if (!intervalos[id]) {
-        let segundos = tiempo;
-        intervalos[id] = setInterval(function() {
-          let minutos = Math.floor(segundos / 60);
-          let segundosRestantes = segundos % 60;
-          document.getElementById(id).innerText = `${minutos < 10 ? '0' : ''}${minutos}:${segundosRestantes < 10 ? '0' : ''}${segundosRestantes}`;
+function validarTiempo(inputId) {
+  let input = document.getElementById(inputId);
+  let tiempo = parseInt(input.value);
 
-          if (segundos > 0) {
-            segundos--;
-          } else {
-            clearInterval(intervalos[id]);
-            intervalos[id] = null;
-            document.getElementById(id).innerText = 'Tiempo Terminado';
-          }
-        }, 1000);
-      }
-    }
+  if (!isNaN(tiempo) && tiempo > 0) {
+    return true;
+  } else {
+    alert(`No has puesto un tiempo válido. Por favor, ingresa un número válido mayor que cero para poder iniciar el cronómetro.`);
+    input.value = "";
+    return false;
+  }
+}
 
-    function controlarCronometro(id, tiempo) {
-      if (!intervalos[id]) {
-        iniciarCronometro(id, tiempo);
+function iniciarCronometro(cronometroId, mensajeId, inputId) {
+  if (validarTiempo(inputId)) {
+    let tiempo = parseInt(document.getElementById(inputId).value);
+    let segundos = 0;
+    document.getElementById(mensajeId).innerText = 'Ejecutándose';
+    intervalos[cronometroId] = setInterval(function() {
+      let minutos = Math.floor(segundos / 60);
+      let segundosRestantes = segundos % 60;
+      document.getElementById(cronometroId).innerText = `${minutos < 10 ? '0' : ''}${minutos}:${segundosRestantes < 10 ? '0' : ''}${segundosRestantes}`;
+
+      if (segundos < tiempo) {
+        segundos++;
       } else {
-        clearInterval(intervalos[id]);
-        intervalos[id] = null;
-        document.getElementById(id).innerText = 'En Pausa';
+        clearInterval(intervalos[cronometroId]);
+        intervalos[cronometroId] = null;
+        document.getElementById(mensajeId).innerText = 'En Pausa';
       }
-    }
+    }, 1000);
+  }
+}
 
-    function reiniciarCronometro(id, tiempo) {
-      clearInterval(intervalos[id]);
-      intervalos[id] = null;
-      document.getElementById(id).innerText = '00:00';
-    }
+function pausarCronometro(cronometroId, mensajeId) {
+  clearInterval(intervalos[cronometroId]);
+  intervalos[cronometroId] = null;
+  document.getElementById(mensajeId).innerText = 'En Pausa';
+}
+
+function reiniciarCronometro(cronometroId, mensajeId, inputId) {
+  clearInterval(intervalos[cronometroId]);
+  intervalos[cronometroId] = null;
+  document.getElementById(cronometroId).innerText = '00:00';
+  document.getElementById(mensajeId).innerText = 'Iniciado';
+  document.getElementById(inputId).value = "";
+}
+
+function iniciarTodosLosCronometros() {
+  if (validarTiempo('inputTiempo1')) {
+    iniciarCronometro('cronometro1', 'mensaje1', 'inputTiempo1');
+    iniciarCronometro('cronometro2', 'mensaje2', 'inputTiempo2');
+    iniciarCronometro('cronometro3', 'mensaje3', 'inputTiempo3');
+  }
+}
+
+function pausarTodosLosCronometros() {
+  pausarCronometro('cronometro1', 'mensaje1');
+  pausarCronometro('cronometro2', 'mensaje2');
+  pausarCronometro('cronometro3', 'mensaje3');
+}
