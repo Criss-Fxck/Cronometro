@@ -25,20 +25,20 @@ body {
   
   .btn-neon {
     color: #fff;
-    background-color: #656565;
+    background-color: rgb(93, 226, 52);
     border-color: #000000;
     transition: color 0.3s, background-color 0.3s;
   }
   
   .btn-neon:hover {
-    color: #ff00ff;
+    color: #6341b1;
     background-color: transparent;
   }
   
   .btn-danger {
     color: #fff;
-    background-color: #b141a2;
-    border-color: #b141a2;
+    background-color: #b14141;
+    border-color: #000000;
     transition: color 0.3s, background-color 0.3s;
   }
   
@@ -47,3 +47,8 @@ body {
     background-color: transparent;
   }
   
+  #Boton3{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
