@@ -11,6 +11,8 @@
     <div class="row">
       <div class="col-lg-4">
         <div class="card">
+
+          <!-- Cronometro 1 en el contenedor de bootstrap -->
           <div class="card-body">
             <h3 class="card-title">Cronómetro 1</h3>
             <input type="number" id="inputTiempo1" class="form-control mb-2" placeholder="Ingrese tiempo en segundos">
@@ -18,12 +20,15 @@
               <p id="mensaje1"></p>
             <button onclick="iniciarCronometro('cronometro1', 'mensaje1', 'inputTiempo1')" class="btn btn-primary btn-neon mr-2">Play</button>
             <button onclick="pausarCronometro('cronometro1', 'mensaje1')" class="btn btn-danger">Pausar</button>
-            <button onclick="reiniciarCronometro('cronometro1', 'mensaje1', 'inputTiempo1')" class="btn btn-primary btn-neon">Reiniciar</button>
+            <button onclick="reiniciarCronometro('cronometro1', 'mensaje1', 'inputTiempo1')" class="btn btn-dark btn-dark">Reiniciar</button>
           </div>
+        <!-- Fin de cronometro 1 -->
         </div>
       </div>
       <div class="col-lg-4">
         <div class="card">
+
+          <!-- Comienzo cronometro 2 con contenedor de bootstrap -->
           <div class="card-body">
             <h3 class="card-title">Cronómetro 2</h3>
             <input type="number" id="inputTiempo2" class="form-control mb-2" placeholder="Ingrese tiempo en segundos">
@@ -31,12 +36,15 @@
               <p id="mensaje2"></p>
             <button onclick="iniciarCronometro('cronometro2', 'mensaje2', 'inputTiempo2')" class="btn btn-primary btn-neon mr-2">Iniciar</button>
             <button onclick="pausarCronometro('cronometro2', 'mensaje2')" class="btn btn-danger">Pausar</button>
-            <button onclick="reiniciarCronometro('cronometro2', 'mensaje2', 'inputTiempo2')" class="btn btn-primary btn-neon">Reiniciar</button>
+            <button onclick="reiniciarCronometro('cronometro2', 'mensaje2', 'inputTiempo2')" class="btn btn-dark btn-dark">Reiniciar</button>
           </div>
+          <!-- Fin de cronometro 2 -->
         </div>
       </div>
       <div class="col-lg-4">
         <div class="card">
+
+          <!-- Comienzo cronometro 3 con contenedor de bootstrap -->
           <div class="card-body">
             <h3 class="card-title">Cronómetro 3</h3>
             <input type="number" id="inputTiempo3" class="form-control mb-2" placeholder="Ingrese tiempo en segundos">
@@ -44,12 +52,17 @@
               <p id="mensaje3"></p>
             <button onclick="iniciarCronometro('cronometro3', 'mensaje3', 'inputTiempo3')" class="btn btn-primary btn-neon mr-2">Iniciar</button>
             <button onclick="pausarCronometro('cronometro3', 'mensaje3')" class="btn btn-danger">Pausar</button>
-            <button onclick="reiniciarCronometro('cronometro3', 'mensaje3', 'inputTiempo3')" class="btn btn-primary btn-neon">Reiniciar</button>
+            <button onclick="reiniciarCronometro('cronometro3', 'mensaje3', 'inputTiempo3')" class="btn btn-dark btn-dark">Reiniciar</button>
           </div>
+          <!-- Fin de cronometro 3 -->
         </div>
       </div>
+      <!-- Boton que inicia los 3 cronometros. -->
+      <button onclick="iniciarTodosLosCronometros()" class="btn btn-danger btn-danger" id="Boton3">Iniciar los 3</button>
     </div>
   </div>
+
+  <!-- Poner el archivo de JavaScript -->
   <script src="Funcionalidad.js"></script>
 </body>
 </html>
