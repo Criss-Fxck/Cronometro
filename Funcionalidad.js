@@ -48,16 +48,18 @@ function reiniciarCronometro(cronometroId, mensajeId, inputId) {
   document.getElementById(inputId).value = "";
 }
 
-function iniciarTodosLosCronometros() {
+
+/* No e utiliza. INTENTO FALLIDO. */
+/* function iniciarTodosLosCronometros() {
   if (validarTiempo('inputTiempo1')) {
-    iniciarCronometro('cronometro1', 'mensaje1', 'inputTiempo1');
-    iniciarCronometro('cronometro2', 'mensaje2', 'inputTiempo2');
-    iniciarCronometro('cronometro3', 'mensaje3', 'inputTiempo3');
+    iniciarCronometro('cronometro1','mensaje1','inputTiempo1');
+    iniciarCronometro('cronometro2','mensaje2','inputTiempo2');
+    iniciarCronometro('cronometro3','mensaje3','inputTiempo3');
   }
 }
 
 function pausarTodosLosCronometros() {
-  pausarCronometro('cronometro1', 'mensaje1');
-  pausarCronometro('cronometro2', 'mensaje2');
-  pausarCronometro('cronometro3', 'mensaje3');
-}
+  pausarCronometro('cronometro1','mensaje1');
+  pausarCronometro('cronometro2','mensaje2');
+  pausarCronometro('cronometro3','mensaje3');
+} */
